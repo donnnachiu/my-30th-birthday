@@ -58,84 +58,6 @@
           margin-top: 20px;
           text-align: left;
         }
-
-        palm-tree {
-          width: 100px;
-          height: 250px;
-          position: relative;
-          margin: 50px auto;
-          cursor: pointer;
-        }
-        
-        .trunk {
-          width: 20px;
-          height: 150px;
-          background-color: brown;
-          position: absolute;
-          bottom: 0;
-          left: 50%;
-          transform: translateX(-50%);
-          border-radius: 10px 10px 0 0;
-        }
-        
-        .leaves {
-          width: 0;
-          height: 0;
-          border-left: 50px solid transparent;
-          border-right: 50px solid transparent;
-          border-bottom: 80px solid green;
-          position: absolute;
-          top: 0;
-          left: 50%;
-          transform: translateX(-50%);
-        }
-        
-        .leaves.growing {
-          animation: grow 1s ease-in-out forwards;
-        }
-        
-        @keyframes grow {
-          from {
-            border-bottom: 0px solid green;
-          }
-          to {
-            border-bottom: 80px solid green;
-          }
-        }
-        
-        .leaf-top {
-          position: absolute;
-          top: -50px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 30px;
-          height: 30px;
-          background-color: green;
-          border-radius: 50%;
-          z-index: 1; /* Ensure it's above the leaves */
-        }
-        
-        .leaf-top::before,
-        .leaf-top::after {
-          content: "";
-          position: absolute;
-          width: 40px;
-          height: 40px;
-          background-color: green;
-          border-radius: 50%;
-          top: 0;
-          left: 50%;
-          transform: translateX(-50%);
-          z-index: -1; /* Make sure it's behind the leaf-top */
-        }
-        
-        .leaf-top::before {
-          transform: translateX(-50%) rotate(45deg);
-        }
-        
-        .leaf-top::after {
-          transform: translateX(-50%) rotate(-45deg);
-        }
     }
     </style>
 </head>
@@ -168,21 +90,7 @@
                 <p>No gifts, please. I truly cherish the opportunity to spend this special day surrounded by the people who mean the world to me. 
                     Your presence would be the most amazing gift I could ask for.</p>
             </div>
-            <div class="palm-tree">
-              <div class="trunk"></div>
-              <div class="leaves"></div>
-              <div class="leaf-top"></div>
-            </div>
         </div>
         </main>
-      <script>
-      const leaves = document.querySelector(".leaves");
-      const alohaText = document.querySelector("h2");
-
-      leaves.addEventListener("click", () => {
-        leaves.classList.add("growing");
-        alohaText.style.display = "block";
-      });
-  </script>
 </body>
 </html>
