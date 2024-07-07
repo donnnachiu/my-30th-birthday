@@ -56,8 +56,52 @@
         .wish {
           font-style: italic;
           margin-top: 20px;
-          text-align: center;
+          text-align: left;
         }
+
+        .palm-tree {
+          width: 50px;
+          height: 150px;
+          position: relative;
+          margin: 50px auto;
+          cursor: pointer;
+        }
+
+        .trunk {
+          width: 20px;
+          height: 100px;
+          background-color: brown;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          border-radius: 10px 10px 0 0;
+        }
+    
+        .leaves {
+          width: 0;
+          height: 0;
+          border-left: 30px solid transparent;
+          border-right: 30px solid transparent;
+          border-bottom: 50px solid green;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+    
+        .leaves.growing {
+          animation: grow 1s ease-in-out forwards;
+        }
+    
+        @keyframes grow {
+          from {
+            border-bottom: 0px solid green;
+          }
+          to {
+            border-bottom: 50px solid green;
+          }
+    }
     </style>
 </head>
 <body>
@@ -89,8 +133,17 @@
                 <p>No gifts, please. I truly cherish the opportunity to spend this special day surrounded by the people who mean the world to me. 
                     Your presence would be the most amazing gift I could ask for.</p>
             </div>
-        </div>
-    </main>
-
+            </div>
+        </main>
+          <div class="palm-tree">
+            <div class="trunk"></div>
+            <div class="leaves"></div>
+          </div>
+      <script>
+        const leaves = document.querySelector('.leaves');
+        leaves.addEventListener('click', () => {
+        leaves.classList.add('growing');
+    });
+  </script>
 </body>
 </html>
