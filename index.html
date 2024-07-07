@@ -140,10 +140,13 @@
         </div>
         </main>
       <script>
-        const leaves = document.querySelector('.leaves');
-        leaves.addEventListener('click', () => {
-        leaves.classList.add('growing');
-    });
+      const leaves = document.querySelector(".leaves");
+      const alohaText = document.querySelector("h2"); // Select the "Aloha" heading
+
+      leaves.addEventListener("click", () => {
+        leaves.classList.add("growing");
+        alohaText.style.display = "block"; // Show the "Aloha" text
+      });
   </script>
 </body>
 </html>
