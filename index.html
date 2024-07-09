@@ -21,6 +21,7 @@
           background-position: center; /* Center the background image */
           background-size: cover;
           padding: 80px 0;
+          min-height: 80vh;
         }
         
         h1 {
@@ -59,30 +60,6 @@
           font-style: italic;
           margin-top: 20px;
           text-align: left;
-        }
-
-        /* Glitters */
-        .glitter {
-          position: absolute;
-          width: 5px;
-          height: 5px;
-          background-color: #FFD700; /* Gold glitter */
-          border-radius: 50%;
-          opacity: 0.8;
-          animation: glitterAnimation 3s ease-in-out infinite; /* Use ease-in-out */
-          pointer-events: none; /* Make glitters transparent to mouse events */
-        }
-        
-        @keyframes glitterAnimation {
-          0% {
-            transform: translate(0, 0);
-          }
-          50% {
-            transform: translate(10px, -10px);
-          }
-          100% {
-            transform: translate(0, 0);
-          }
         }
 
         /* YouTube Video */
@@ -132,25 +109,6 @@
           <iframe src="https://youtu.be/98WtmW-lfeE?si=ymaEiYVeQ2CYlzUw" frameborder="0" allowfullscreen></iframe>
         </div>
         </main>
-        <script>
-          const numGlitters = 20; // Adjust the number of glitters
-          const glitters = [];
 
-          // Create glitters
-          for (let i = 0; i < numGlitters; i++) {
-            const glitter = document.createElement("div");
-            glitter.classList.add("glitter");
-            document.body.appendChild(glitter);
-            glitters.push(glitter);
-          }
-
-          // Update glitter positions on mousemove
-          document.addEventListener("mousemove", (event) => {
-            glitters.forEach((glitter) => {
-              glitter.style.left = event.clientX + "px";
-              glitter.style.top = event.clientY + "px";
-            });
-          });
-        </script>
 </body>
 </html>
