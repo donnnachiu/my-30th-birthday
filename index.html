@@ -69,10 +69,10 @@
           background-color: #FFD700; /* Gold glitter */
           border-radius: 50%;
           opacity: 0.8;
-          animation: glitterAnimation 3s linear infinite;
+          animation: glitterAnimation 3s ease-in-out infinite; /* Use ease-in-out */
           pointer-events: none; /* Make glitters transparent to mouse events */
         }
-
+        
         @keyframes glitterAnimation {
           0% {
             transform: translate(0, 0);
